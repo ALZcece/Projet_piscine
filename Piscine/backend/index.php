@@ -1,16 +1,11 @@
 <?php
-// index.php - Point d'entrée du backend
+require_once __DIR__ . '/controllers/AuthController.php';
 
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-
-// Inclusion de la configuration
-require_once __DIR__ . '/config/database.php';
-
-// Inclusion des routes (point d’accès à vos contrôleurs)
-require_once __DIR__ . '/routes/index.php';
-
-// Exemple de réponse par défaut si aucune route ne correspond
-http_response_code(404);
-echo json_encode(["message" => "Ressource non trouvée."]);
-?>
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    switch ($_POST['action']) {
+        case 'login':
+            AuthController::login($_POST['email'], $_POST['password']);
+            break;
+        // autres actions...
+    }
+}
