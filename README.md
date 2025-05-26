@@ -31,7 +31,6 @@ piscine/
 ├── assets/
 │   ├── css/
 │   ├── js/
-│   └── images/
 ├── pages/
 │   ├── accueil.html
 │   ├── reseau.html
@@ -39,6 +38,9 @@ piscine/
 │   ├── messagerie.html
 │   ├── notifications.html
 │   └── emplois.html
+|
+├── Images/
+|
 ├── index.html
 │
 ├── database/
