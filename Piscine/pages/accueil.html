@@ -5,15 +5,22 @@
     <title>HireSphere - Accueil</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
+        body {
+            margin: 0;
+            padding-top: 120px; /* Ajusté pour laisser de l'espace sous la section "Ajouter une publication" */
+            overflow-x: hidden; /* Empêche le débordement horizontal */
+        }
         .search-bar {
             position: absolute;
             top: 15px;
-            left: 20px;
+            right: 100px; /* Repositionnée sur la droite */
             display: flex;
             align-items: center;
             gap: 5px;
+            width: 250px; /* Réduction de la largeur */
         }
         .search-bar input {
+            flex: 1;
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -28,6 +35,109 @@
         }
         .search-bar button:hover {
             background-color: #003366;
+        }
+        .quick-post {
+            position: fixed;
+            top: 70px; /* Juste en dessous de l'entête */
+            left: 290px; /* Réduit pour éviter le chevauchement avec la barre latérale gauche */
+            right: 290px; /* Réduit pour éviter le chevauchement avec la barre latérale droite */
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Assure que la section est au-dessus des autres éléments */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quick-post-profile-picture {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .quick-post input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .quick-post button {
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .quick-post button:hover {
+            background-color: #003366;
+        }
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 250px;
+            height: calc(100% - 70px);
+            background-color: #f4f4f4;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .profile-summary {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-summary img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-left: 270px;
+            margin-right: 300px;
+            padding: 15px;
+            padding-top: 20px; /* Ajout d'espace pour éviter le chevauchement */
+        }
+        .publication {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .right-sidebar {
+            position: fixed;
+            top: 70px;
+            right: 0;
+            width: 250px;
+            height: calc(100% - 70px);
+            background-color: #f4f4f4;
+            padding: 15px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #004080;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .profile-picture {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        header h1 {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 24px;
+            color: #004080;
         }
     </style>
 </head>
@@ -49,6 +159,11 @@
             </ul>
         </nav>
     </header>
+    <div class="quick-post">
+        <img src="../assets/images/employes/macron.jpg" alt="Photo de profil" class="quick-post-profile-picture">
+        <input type="text" placeholder="Commencez une publication..." />
+        <button>Publier</button>
+    </div>
     <div class="sidebar">
         <div class="profile-summary">
             <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
@@ -74,10 +189,6 @@
                 <p>Ceci est le contenu de la troisième publication.</p>
             </div>
         </main>
-
-        <footer>
-            <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
-        </footer>
     </div>
     <div class="right-sidebar">
         <h3>Suggestions</h3>
@@ -87,5 +198,8 @@
             <li><a href="#">Mathieu Blanchard</a></li>
         </ul>
     </div>
+    <footer>
+        <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
