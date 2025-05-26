@@ -1,4 +1,4 @@
-# 🌐 Projet Web Dynamique 2025 – HireSphere
+# 🌐 Projet Piscine – HireSphere
 
 ## 📘 Présentation
 
