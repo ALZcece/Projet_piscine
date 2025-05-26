@@ -1,8 +1,8 @@
-# 🌐 Projet Web Dynamique 2025 – ECE In
+# 🌐 Projet Web Dynamique 2025 – HireSphere
 
 ## 📘 Présentation
 
-**ECE In** est une plateforme web de type réseau social professionnel destinée à la communauté ECE Paris : étudiants, enseignants, personnels, etc. Le site permet de publier des statuts, événements, photos, vidéos et CV, et d'interagir avec son réseau professionnel.
+**HireSphere** est une plateforme web de type réseau social professionnel destinée à la communauté ECE Paris : étudiants, enseignants, personnels, etc. Le site permet de publier des statuts, événements, photos, vidéos et CV, et d'interagir avec son réseau professionnel.
 
 Inspiré de LinkedIn, ce projet vise à développer une application web **client-serveur** complète avec gestion des utilisateurs, interactions sociales, et moteur de recherche d’emplois.
 
