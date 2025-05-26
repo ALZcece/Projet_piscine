@@ -28,19 +28,19 @@ piscine/
 │   ├── uploads/
 │   └── index.php
 │
-├── frontend/
-│   ├── assets/
-│   │   ├── css/
-│   │   ├── js/
-│   │   └── images/
-│   ├── pages/
-│   │   ├── accueil.html
-│   │   ├── reseau.html
-│   │   ├── profil.html
-│   │   ├── messagerie.html
-│   │   ├── notifications.html
-│   │   └── emplois.html
-│   └── index.html
+
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── pages/
+│   ├── accueil.html
+│   ├── reseau.html
+│   ├── profil.html
+│   ├── messagerie.html
+│   ├── notifications.html
+│   └── emplois.html
+├── index.html
 │
 ├── database/
 │   ├── schema.sql
