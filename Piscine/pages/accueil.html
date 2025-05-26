@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <title>HireSphere - Accueil</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .search-bar {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .search-bar input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar button {
+            padding: 5px 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #003366;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>HireSphere</h1>
+        <form action="#" method="get" class="search-bar">
+            <input type="text" name="query" placeholder="Rechercher..." />
+            <button type="submit">Rechercher</button>
+        </form>
         <nav>
             <ul>
                 <li><a href="accueil.html">Accueil</a></li>
@@ -26,9 +56,6 @@
             <p>Étudiant en informatique</p>
             <p>Université de Paris</p>
         </div>
-        <ul>
-            <!-- Onglets supprimés -->
-        </ul>
     </div>
     <div class="content">
         <main>
