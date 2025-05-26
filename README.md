@@ -109,7 +109,7 @@ Un fichier `IA-journal.pdf` présent dans `/docs/` détaille :
 ---
 
 
-## 📅 Dates importantes
+## 📅 Dates
 
 - **Jeudi 29 mai 2025** à 23h55 : Livrable de conception
 - **Dimanche 1er juin 2025** à 23h55 : Projet final
