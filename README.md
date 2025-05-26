@@ -28,7 +28,6 @@ piscine/
 │   ├── uploads/
 │   └── index.php
 │
-
 ├── assets/
 │   ├── css/
 │   ├── js/
