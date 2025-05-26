@@ -11,7 +11,7 @@ Inspiré de LinkedIn, ce projet vise à développer une application web **client
 ## 🗂️ Arborescence du projet
 
 ```
-ecein-project/
+piscine/
 │
 ├── backend/
 │   ├── config/
@@ -91,10 +91,10 @@ ecein-project/
 
 ## 🧰 Technologies utilisées
 
-- **Frontend** : HTML5, CSS3, Bootstrap, JavaScript, jQuery
-- **Backend** : PHP 7+, AJAX
+- **Frontend** : HTML5, CSS, Bootstrap, JavaScript, jQuery
+- **Backend** : PHP
 - **Base de données** : MySQL
-- **Outils** : Git, Bitbucket, Wamp/XAMPP
+- **Outils** : GitHub, Wamp
 
 ---
 
@@ -108,12 +108,6 @@ Un fichier `IA-journal.pdf` présent dans `/docs/` détaille :
 
 ---
 
-## 🔁 Versioning Git
-
-Lien Bitbucket : [https://bitbucket.org/<votre-projet>](#)  
-Inclure : identifiants, captures d’écran, historique des commits
-
----
 
 ## 📅 Dates importantes
 
@@ -123,20 +117,13 @@ Inclure : identifiants, captures d’écran, historique des commits
 
 ---
 
-## 🤝 Membres du projet
-
-- NOM Prénom (Chef de projet)
-- NOM Prénom
-- NOM Prénom
-
----
 
 ## 📚 Références
 
-- [https://www.w3schools.com](https://www.w3schools.com)
-- [https://openclassrooms.com](https://openclassrooms.com)
-- [https://boostcamp.omneseducation.com](https://boostcamp.omneseducation.com)
-
----
-
-> ✨ *Bon développement et bon courage !*
+• Les meilleures pratiques pour la conception de sites web (en anglais)
+• Wireframe: (https://webdesign.tutsplus.com/articles/a-beginners-guide-to-wireframing--
+webdesign-7399)
+• Storyboard: (https://www.fastcodesign.com/1672917/the-8-steps-to-creating-a-greatstoryboard)
+• Les bases de données relationnelles : (http://cerig.pagora.grenoble-inp.fr/tutoriel/basesde-donnees/chap06.htm)
+• MySQL : (https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-etmysql/lire-des-donnees-2)
+• Tutorial sur plusieurs sujets dont HTML, CSS, PHP, etc. : https://www.w3schools.com/
