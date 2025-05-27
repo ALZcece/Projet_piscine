@@ -4,9 +4,135 @@
     <meta charset="UTF-8">
     <title>HireSphere - Réseau</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="reseau.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+        .search-bar {
+            position: absolute;
+            top: -2px;
+            right: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 5px;
+            width: 250px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar button {
+            padding: 6px 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #003366;
+        }
+        .content {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 15px;
+            padding-top: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .publication {
+            background-color: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+        }
+        .content > h2 {
+            margin-bottom: 60px;
+        }
+        /* Ajout styles pour network-container, invitation, suggestion, etc. */
+        .network-container {
+            padding: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .invitation, .suggestion {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .invitation h2, .suggestion h2 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .person img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .person-info {
+            flex-grow: 1;
+        }
+        .person h4 {
+            margin: 0;
+        }
+        .person p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .actions button {
+            margin-left: 10px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .accept, .connect {
+            background-color: #004080;
+            color: white;
+        }
+        .ignore {
+            background-color: #ccc;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <h1>HireSphere</h1>
+        <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
+            <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
+            <button type="submit">Rechercher</button>
+        </form>
         <nav>
             <ul>
                 <li><a href="accueil.html">Accueil</a></li>
@@ -18,12 +144,61 @@
             </ul>
         </nav>
     </header>
-
-    <main>
+    
+    <div class="content">
         <h2>Mon réseau</h2>
-        <p>Contenu principal ici.</p>
-    </main>
+        <div class="network-container">
+            <section class="invitation">
+                <h2>Invitations</h2>
+                <div class="person">
+                    <img src="../assets/images/employes/narain.jpg" alt="Profil 1" />
+                    <div class="person-info">
+                        <h4>Claire Martin</h4>
+                        <p>Développeuse Front-End chez Capgemini</p>
+                    </div>
+                    <div class="actions">
+                        <button class="accept">Accepter</button>
+                        <button class="ignore">Refuser</button>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="../assets/images/employes/soukane.jpg" alt="Profil 2" />
+                    <div class="person-info">
+                        <h4>Lucas Bernard</h4>
+                        <p>Étudiant en cybersécurité</p>
+                    </div>
+                    <div class="actions">
+                        <button class="accept">Accepter</button>
+                        <button class="ignore">Refuser</button>
+                    </div>
+                </div>
+            </section>
 
+            <section class="suggestion">
+                <h2>Suggestions</h2>
+                <div class="person">
+                    <img src="../assets/images/employes/griffith.jpg" alt="Profil 3" />
+                    <div class="person-info">
+                        <h4>Sophie Renault</h4>
+                        <p>UX Designer chez Ubisoft</p>
+                    </div>
+                    <div class="actions">
+                        <button class="connect">Suivre</button>
+                    </div>
+                </div>
+                <div class="person">
+                    <img src="../assets/images/employes/cherif.jpg" alt="Profil 4" />
+                    <div class="person-info">
+                        <h4>David Lefèvre</h4>
+                        <p>Chef de projet IT chez Thales</p>
+                    </div>
+                    <div class="actions">
+                        <button class="connect">Suivre</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
     </footer>
