@@ -10,23 +10,25 @@
             padding-top: 120px; /* Ajusté pour laisser de l'espace sous la section "Ajouter une publication" */
             overflow-x: hidden; /* Empêche le débordement horizontal */
         }
+        
         .search-bar {
             position: absolute;
-            top: 15px;
-            right: 100px; /* Repositionnée sur la droite */
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            width: 250px; /* Réduction de la largeur */
+            top: 0px; /* Alignement vertical */
+            right: 60px; /* Positionné à droite */
+            display: flex; /* Utilisation de flexbox */
+            flex-direction: row; /* Alignement horizontal des éléments */
+            align-items: flex-end; /* Aligne les éléments à droite */
+            gap: 5px; /* Espacement entre les éléments */
+            width: 300px; /* Largeur ajustée */
         }
         .search-bar input {
-            flex: 1;
+            width: 100%; /* Prend toute la largeur disponible */
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
         .search-bar button {
-            padding: 5px 10px;
+            padding: 6px 10px;
             background-color: #004080;
             color: white;
             border: none;
@@ -93,15 +95,15 @@
             margin-bottom: 10px;
         }
         .content {
-            margin-left: 270px;
-            margin-right: 300px;
+            margin-left: 100px;
+            margin-right: 275px;
             padding: 15px;
             padding-top: 20px; /* Ajout d'espace pour éviter le chevauchement */
         }
         .publication {
             background-color: white;
             padding: 15px;
-            margin: 10px 0;
+            margin: 100px 0;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
