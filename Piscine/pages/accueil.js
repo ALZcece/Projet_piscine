@@ -1,8 +1,8 @@
 function handleSearch(event) {
-    event.preventDefault(); // Empêche le rechargement de la page
+    event.preventDefault();
     const query = document.getElementById('search-input').value.toLowerCase();
 
-    // Redirections basées sur les mots-clés
+
     if (query.includes('réseau')) {
         window.location.href = 'reseau.html';
     } else if (query.includes('profil')) {
