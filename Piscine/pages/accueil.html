@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>HireSphere - Accueil</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="accueil.js" defer></script>
     <style>
         body {
             margin: 0;
@@ -130,8 +131,8 @@
 <body>
     <header>
         <h1>HireSphere</h1>
-        <form action="#" method="get" class="search-bar">
-            <input type="text" name="query" placeholder="Rechercher..." />
+        <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
+            <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
             <button type="submit">Rechercher</button>
         </form>
         <nav>
