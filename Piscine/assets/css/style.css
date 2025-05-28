@@ -205,6 +205,8 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
+    max-width: 600px;
+    margin: 20px auto;
 }
 .card h2 {
     display: block;
@@ -235,7 +237,7 @@ footer {
     font-size: 0.9em;
     color: #555;
 }
-.actions button {
+.actions , .post button {
     margin-left: 10px;
     padding: 8px 12px;
     border: none;
@@ -251,4 +253,31 @@ footer {
 .btngray {
     background-color: #ccc !important;
     color: black !important;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.post img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-input {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
 }
