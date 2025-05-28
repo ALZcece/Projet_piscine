@@ -2,7 +2,6 @@ function handleSearch(event) {
     event.preventDefault();
     const query = document.getElementById('search-input').value.toLowerCase();
 
-
     if (query.includes('réseau')) {
         window.location.href = 'reseau.html';
     } else if (query.includes('profil')) {
