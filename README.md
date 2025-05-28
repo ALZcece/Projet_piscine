@@ -30,22 +30,18 @@ piscine/
 │
 ├── assets/
 │   ├── css/
+│       └── style.css
 │   ├── js/
+│       └── global.js
 |   └── images/
 |
 ├── pages/
 │   ├── accueil.html
-│   ├── accueil.js
 │   ├── reseau.html
-│   ├── reseau.js
 │   ├── profil.html
-│   ├── profil.js
 │   ├── messagerie.html
-│   ├── messagerie.js
 │   ├── notifications.html
-│   ├── notifications.js
 │   ├── emplois.html
-│   └── emplois.js
 |
 ├── index.html
 │
