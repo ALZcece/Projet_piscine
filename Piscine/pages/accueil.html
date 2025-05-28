@@ -27,9 +27,17 @@
     <div class="card">
         <div class="picture">
         <img src="../assets/images/employes/macron.jpg" alt="Photo de profil" class="quick-post-profile-picture">
+<<<<<<< Updated upstream
         </div>
         <input type="text" placeholder="Commencez une publication..." />
         <button>Publier</button>
+=======
+        <form id="post-form" onsubmit="handlePost(event)" style="display: flex; align-items: center; gap: 10px;">
+            <input type="text" id="post-text" placeholder="Écrivez quelque chose..." style="flex: 1;" />
+            <input type="file" id="post-image" accept="image/*" style="flex: 0;" />
+            <button type="submit" style="flex: 0;">Publier</button>
+        </form>
+>>>>>>> Stashed changes
     </div>
     <div class="sidebar">
         <div class="profile-summary">
@@ -42,9 +50,10 @@
         </div>
     </div>
     <div class="content">
-        <main>
+        <main id="posts-container">
             <h2>Bienvenue sur HireSphere</h2>
             <p>Contenu principal ici.</p>
+<<<<<<< Updated upstream
             <div class="card">
                 <h3>Publication 1</h3>
                 <p>Ceci est le contenu de la première publication.</p>
@@ -57,6 +66,9 @@
                 <h3>Publication 3</h3>
                 <p>Ceci est le contenu de la troisième publication.</p>
             </div>
+=======
+            <!-- Les publications apparaîtront ici -->
+>>>>>>> Stashed changes
         </main>
     </div>
     <div class="right-sidebar">
