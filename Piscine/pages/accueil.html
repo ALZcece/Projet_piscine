@@ -24,46 +24,67 @@
             </ul>
         </nav>
     </header>
-    <div class="post">
-        <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
-        <input type="text" placeholder="Commencez une publication..." class="post-input">
-        <button class="btnblue">Publier</button>
-    </div>
 
-    <div class="sidebar">
-        <div class="profile-summary">
-            <div class="picture">
-            <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
+    <div class="page-layout">
+        <div class="sidebar">
+            <div class="profile-summary">
+                <div class="picture">
+                    <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
+                </div>
+                <h3>Jean Dupont</h3>
+                <p>Étudiant en informatique</p>
+                <p>Université de Paris</p>
             </div>
-            <h3>Jean Dupont</h3>
-            <p>Étudiant en informatique</p>
-            <p>Université de Paris</p>
+        </div>
+
+        <div class="content">
+            <!-- Faux champ de post : seul le champ est cliquable -->
+            <div class="post">
+                <img src="../assets/images/employes/macron.jpg" alt="Photo de profil" class="post-avatar">
+                <button class="fake-input-button" onclick="openModal()">Commencez une publication...</button>
+            </div>
+
+ 
+            <!-- Modale -->
+            <div id="post-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>Créer une publication</h3>
+                    <textarea id="modal-text" placeholder="Exprimez-vous..."></textarea>
+                    <div class="modal-actions">
+                        <label for="modal-image" class="media-label">
+                            <img src="../assets/images/icon-media.webp" alt="media icon" class="media-icon">
+                            <span>Media</span>
+                            <input type="file" id="modal-image" accept="image/*" style="display: none;">
+                        </label>
+                        <button class="btnblue" onclick="submitModalPost()">Publier</button>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Bienvenue sur HireSphere</h2>
+            <div id="posts-container">
+                <div class="card">
+                    <h3>Publication 1</h3>
+                    <p>Ceci est le contenu de la première publication.</p>
+                </div>
+                <div class="card">
+                    <h3>Publication 2</h3>
+                    <p>Ceci est le contenu de la deuxième publication.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <h3>Suggestions</h3>
+            <ul>
+                <li><a href="#">Antoine Dupont</a></li>
+                <li><a href="#">Airbus Helicopters</a></li>
+                <li><a href="#">Mathieu Blanchard</a></li>
+            </ul>
         </div>
     </div>
-    <div class="content">
-            <h2>Bienvenue sur HireSphere</h2>
-            <p>Contenu principal ici.</p>
-            <div class="card">
-                <h3>Publication 1</h3>
-                <p>Ceci est le contenu de la première publication.</p>
-            </div>
-            <div class="card">
-                <h3>Publication 2</h3>
-                <p>Ceci est le contenu de la deuxième publication.</p>
-            </div>
-            <div class="card">
-                <h3>Publication 3</h3>
-                <p>Ceci est le contenu de la troisième publication.</p>
-            </div>
-    </div>
-    <div class="right-sidebar">
-        <h3>Suggestions</h3>
-        <ul>
-            <li><a href="#">Antoine Dupont</a></li>
-            <li><a href="#">Airbus Helicopters</a></li>
-            <li><a href="#">Mathieu Blanchard</a></li>
-        </ul>
-    </div>
+
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
     </footer>
