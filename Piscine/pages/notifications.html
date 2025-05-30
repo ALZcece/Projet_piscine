@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>HireSphere - Notifications</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/global.js" defer></script>
 </head>
 <body>
     <header>
+        <h1>HireSphere</h1>
+        <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
+            <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
+            <button type="submit">Rechercher</button>
+        </form>
         <nav>
             <ul>
                 <li><a href="accueil.html">Accueil</a></li>
@@ -19,10 +25,38 @@
         </nav>
     </header>
 
-    <main>
-        <h2>Notifications</h2>
-        <p>Contenu principal ici.</p>
-    </main>
+    <!-- Ajout de la classe notifications-layout ici -->
+    <div class="page-layout notifications-layout">
+
+        <!-- Colonne gauche : Résumé du profil -->
+        <div class="sidebar">
+            <div class="profile-summary">
+                <div class="picture">
+                    <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
+                </div>
+                <h3>Jean Dupont</h3>
+                <p>Étudiant en informatique</p>
+                <p>Université de Paris</p>
+            </div>
+        </div>
+
+        <!-- Contenu principal : Notifications -->
+        <div class="content">
+            <h2>Notifications</h2>
+
+            <div class="card">
+                <p><strong>🔔 Notification 1 :</strong> Antoine Dupont a consulté votre profil.</p>
+            </div>
+
+            <div class="card">
+                <p><strong>🔔 Notification 2 :</strong> Vous avez reçu une nouvelle offre d’emploi recommandée.</p>
+            </div>
+
+            <div class="card">
+                <p><strong>🔔 Notification 3 :</strong> Airbus Helicopters vous a envoyé une invitation à se connecter.</p>
+            </div>
+        </div>     
+    </div>
 
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
