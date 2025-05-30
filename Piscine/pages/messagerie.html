@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <title>HireSphere - Messagerie</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/global.js" defer></script>
 </head>
 <body>
     <header>
         <h1>HireSphere</h1>
+        <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
+            <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
+            <button type="submit">Rechercher</button>
+        </form>
         <nav>
             <ul>
                 <li><a href="accueil.html">Accueil</a></li>

@@ -414,3 +414,54 @@ footer {
     font-size: 14px;
     box-sizing: border-box;
 }
+/* ====== NOTIFICATIONS - Agrandir zone centrale ====== */
+.page-layout.notifications-layout .content {
+    max-width: 900px;
+    width: 100%;
+}
+
+.page-layout.notifications-layout {
+    justify-content: space-between;
+}
+
+.page-layout.notifications-layout .sidebar {
+    flex-shrink: 0;
+}
+/* Centrer les cartes réseau sur la page */
+.network-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Réduire la taille des photos de profil */
+.person .picture img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Espacer et aligner les personnes */
+.person {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Alignement des boutons */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Réduction de la taille des titres */
+.card h2 {
+    font-size: 18px;
+}
