@@ -20,51 +20,56 @@
         </nav>
     </header>
 
-    <!-- Colonne gauche : liste des conversations -->
-    <div class="sidebar">
-        <div class="search-bar">
-            <input type="text" placeholder="Rechercher...">
-            <button>🔍</button>
+    <!-- STRUCTURE PAGE LAYOUT -->
+    <div class="page-layout">
+
+        <!-- Colonne gauche : liste des conversations -->
+        <div class="sidebar">
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher...">
+                <button>🔍</button>
+            </div>
+            <ul>
+                <li><strong>Raphaël Goerens</strong><br><small>Découvrez Terrentra Metz 2025</small></li>
+                <li><strong>Ippon Technologies</strong><br><small>Quelles sont les bénéfices...</small></li>
+                <li><strong>Mathis Grand</strong><br><small>Pas de souci</small></li>
+                <li><strong>Celian Marchand</strong><br><small>Je te contacte car...</small></li>
+                <li><strong>Alexandre Level</strong><br><small>Bravo pour la réussite !</small></li>
+                <li><strong>Emma Henry</strong><br><small>👍</small></li>
+            </ul>
         </div>
-        <ul>
-            <li><strong>Raphaël Goerens</strong><br><small>Découvrez Terrentra Metz 2025</small></li>
-            <li><strong>Ippon Technologies</strong><br><small>Quelles sont les bénéfices...</small></li>
-            <li><strong>Mathis Grand</strong><br><small>Pas de souci</small></li>
-            <li><strong>Celian Marchand</strong><br><small>Je te contacte car...</small></li>
-            <li><strong>Alexandre Level</strong><br><small>Bravo pour la réussite !</small></li>
-            <li><strong>Emma Henry</strong><br><small>👍</small></li>
-        </ul>
-    </div>
 
-    <!-- Colonne droite : pub ou infos -->
-    <div class="right-sidebar">
-        <h3>Premium</h3>
-        <p><strong>Célian, booste ton réseau plus vite avec Premium.</strong></p>
-        <button class="btnblue">Activer l'offre</button>
+        <!-- Contenu principal -->
+        <div class="content">
+            <h2>Conversation - Raphaël Goerens</h2>
 
-        <hr>
+            <div class="card">
+                <p><strong>Raphaël :</strong> Bonjour Célian,<br>
+                Vous travaillez sur les enjeux de transition énergétique ? Venez à la rencontre de ceux qui, comme vous, innovent et agissent sur les territoires !</p>
 
-        <p><strong>Premium InMail</strong> est 4.6x plus efficace que les emails à froid.</p>
-        <button class="btngray">Essai gratuit 2 mois</button>
-    </div>
+                <p><strong>Toi :</strong> Merci pour l’info ! Je vais regarder ça 👍</p>
 
-    <!-- Contenu principal -->
-    <main class="content">
-        <h2>Conversation - Raphaël Goerens</h2>
-
-        <div class="card">
-            <p><strong>Raphaël :</strong> Bonjour Célian,<br>
-            Vous travaillez sur les enjeux de transition énergétique ? Venez à la rencontre de ceux qui, comme vous, innovent et agissent sur les territoires !</p>
-
-            <p><strong>Toi :</strong> Merci pour l’info ! Je vais regarder ça 👍</p>
-
-            <div class="post">
-                <img src="../assets/images/user.jpg" alt="Toi">
-                <input type="text" class="post-input" placeholder="Écrivez un message...">
-                <button class="btnblue">Envoyer</button>
+                <div class="post">
+                    <img src="../assets/images/employes/macron.jpg" alt="Toi">
+                    <input type="text" class="post-input" placeholder="Écrivez un message...">
+                    <button class="btnblue">Envoyer</button>
+                </div>
             </div>
         </div>
-    </main>
+
+        <!-- Colonne droite : pub ou infos -->
+        <div class="right-sidebar">
+            <h3>Premium</h3>
+            <p><strong>Célian, booste ton réseau plus vite avec Premium.</strong></p>
+            <button class="btnblue">Activer l'offre</button>
+
+            <hr>
+
+            <p><strong>Premium InMail</strong> est 4.6x plus efficace que les emails à froid.</p>
+            <button class="btngray">Essai gratuit 2 mois</button>
+        </div>
+
+    </div>
 
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
