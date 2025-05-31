@@ -31,73 +31,175 @@
         </form>
     </header>
 
-    <div class="content" style="margin: 0 auto; max-width: 900px;">
-        <h2>Mon réseau</h2>
-        <div class="network-container">
-            <!-- Invitations -->
-            <section class="card">
-                <h3>Invitations</h3>
+    <div class="page-layout">
+        <div class="sidebar">
+            <h2>Mon réseau</h2>
+            <section class="card" id="my-network">
                 <div class="person">
                     <div class="picture">
-                        <img src="../assets/images/employes/narain.jpg" alt="Profil 1">
+                        <a href="profil.html?id=1"><img src="../assets/images/employes/narain.jpg" alt="Profil 1"></a>
                     </div>
                     <div class="person-info">
                         <h4>Claire Martin</h4>
                         <p>Développeuse Front-End chez Capgemini</p>
                     </div>
-                    <div class="actions">
-                        <button class="btnblue">Accepter</button>
-                        <button class="btngray">Refuser</button>
-                    </div>
                 </div>
                 <div class="person">
                     <div class="picture">
-                        <img src="../assets/images/employes/soukane.jpg" alt="Profil 2">
+                        <a href="profil.html?id=2"><img src="../assets/images/employes/soukane.jpg" alt="Profil 2"></a>
                     </div>
                     <div class="person-info">
                         <h4>Lucas Bernard</h4>
                         <p>Étudiant en cybersécurité</p>
                     </div>
-                    <div class="actions">
-                        <button class="btnblue">Accepter</button>
-                        <button class="btngray">Refuser</button>
-                    </div>
                 </div>
             </section>
+        </div>
+        <div class="content">
+            <div class="network-container">
+                <!-- Invitations -->
+                <section class="card" id="invitations">
+                    <h3>Invitations</h3>
+                    <div class="person">
+                        <div class="picture">
+                            <a href="profil.html?id=3"><img src="../assets/images/employes/griffith.jpg" alt="Profil 3"></a>
+                        </div>
+                        <div class="person-info">
+                            <h4>Sophie Renault</h4>
+                            <p>UX Designer chez Ubisoft</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btnblue accept-btn">Accepter</button>
+                            <button class="btngray refuse-btn">Refuser</button>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="picture">
+                            <a href="profil.html?id=4"><img src="../assets/images/employes/cherif.jpg" alt="Profil 4"></a>
+                        </div>
+                        <div class="person-info">
+                            <h4>David Lefèvre</h4>
+                            <p>Chef de projet IT chez Thales</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btnblue accept-btn">Accepter</button>
+                            <button class="btngray refuse-btn">Refuser</button>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Suggestions -->
-            <section class="card">
-                <h3>Suggestions</h3>
-                <div class="person">
-                    <div class="picture">
-                        <img src="../assets/images/employes/griffith.jpg" alt="Profil 3">
+                <!-- Suggestions -->
+                <section class="card" id="suggestions">
+                    <h3>Suggestions</h3>
+                    <div class="person">
+                        <div class="picture">
+                            <a href="profil.html?id=5"><img src="../assets/images/employes/macron.jpg" alt="Profil 5"></a>
+                        </div>
+                        <div class="person-info">
+                            <h4>Emma Dubois</h4>
+                            <p>Étudiante en Data Science</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btnblue follow-btn">Suivre</button>
+                        </div>
                     </div>
-                    <div class="person-info">
-                        <h4>Sophie Renault</h4>
-                        <p>UX Designer chez Ubisoft</p>
+                    <div class="person">
+                        <div class="picture">
+                            <a href="profil.html?id=6"><img src="../assets/images/employes/griffith.jpg" alt="Profil 6"></a>
+                        </div>
+                        <div class="person-info">
+                            <h4>Antoine Girard</h4>
+                            <p>Développeur Web chez Orange</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btnblue follow-btn">Suivre</button>
+                        </div>
                     </div>
-                    <div class="actions">
-                        <button class="btnblue">Suivre</button>
+                </section>
+
+                <!-- Amis de vos amis -->
+                <section class="card" id="friends-of-friends">
+                    <h3>Amis de vos amis</h3>
+                    <div class="person">
+                        <div class="picture">
+                            <a href="profil.html?id=7"><img src="../assets/images/employes/soukane.jpg" alt="Profil 7"></a>
+                        </div>
+                        <div class="person-info">
+                            <h4>Julie Petit</h4>
+                            <p>Chargée de communication</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btnblue add-friend-btn">Ajouter</button>
+                        </div>
                     </div>
-                </div>
-                <div class="person">
-                    <div class="picture">
-                        <img src="../assets/images/employes/cherif.jpg" alt="Profil 4">
+                    <div class="person">
+                        <div class="picture">
+                            <a href="profil.html?id=8"><img src="../assets/images/employes/narain.jpg" alt="Profil 8"></a>
+                        </div>
+                        <div class="person-info">
+                            <h4>Marc Lemoine</h4>
+                            <p>Professeur à l'ECE</p>
+                        </div>
+                        <div class="actions">
+                            <button class="btnblue add-friend-btn">Ajouter</button>
+                        </div>
                     </div>
-                    <div class="person-info">
-                        <h4>David Lefèvre</h4>
-                        <p>Chef de projet IT chez Thales</p>
-                    </div>
-                    <div class="actions">
-                        <button class="btnblue">Suivre</button>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
     </footer>
+
+    <script>
+    // Ajout d'un ami depuis Invitations ou Suggestions
+    function addToNetwork(name, imgSrc, desc) {
+        const myNetwork = document.getElementById('my-network');
+        const div = document.createElement('div');
+        div.className = 'person';
+        div.innerHTML = `<div class="picture"><img src="${imgSrc}" alt="${name}"></div><div class="person-info"><h4>${name}</h4><p>${desc}</p></div>`;
+        myNetwork.appendChild(div);
+    }
+    // Invitations : accepter/refuser
+    document.querySelectorAll('.accept-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const person = this.closest('.person');
+            const name = person.querySelector('h4').textContent;
+            const imgSrc = person.querySelector('img').src;
+            const desc = person.querySelector('p').textContent;
+            addToNetwork(name, imgSrc, desc);
+            person.remove();
+        });
+    });
+    document.querySelectorAll('.refuse-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.person').remove();
+        });
+    });
+    // Suggestions : suivre
+    document.querySelectorAll('.follow-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const person = this.closest('.person');
+            const name = person.querySelector('h4').textContent;
+            const imgSrc = person.querySelector('img').src;
+            const desc = person.querySelector('p').textContent;
+            addToNetwork(name, imgSrc, desc);
+            person.remove();
+        });
+    });
+    // Amis de vos amis : ajouter
+    document.querySelectorAll('.add-friend-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const person = this.closest('.person');
+            const name = person.querySelector('h4').textContent;
+            const imgSrc = person.querySelector('img').src;
+            const desc = person.querySelector('p').textContent;
+            addToNetwork(name, imgSrc, desc);
+            person.remove();
+        });
+    });
+    </script>
 </body>
 </html>
