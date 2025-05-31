@@ -6,23 +6,29 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/global.js" defer></script>
 </head>
-<body>
+<body style="padding-top: 80px;">
     <header>
         <h1>HireSphere</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="reseau.html">Réseau</a></li>
+                <li><a href="emplois.html">Emplois</a></li>
+                <li><a href="messagerie.html">Messagerie</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="profil.html">Vous</a></li>
+                <li>
+                    <form action="../backend/index.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="logout">
+                        <button type="submit" class="logout-link">Se déconnecter</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
         <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
             <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
             <button type="submit">Rechercher</button>
         </form>
-        <nav>
-            <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="reseau.html">Mon Réseau</a></li>
-                <li><a href="profil.html">Vous</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="messagerie.html">Messagerie</a></li>
-                <li><a href="emplois.html">Emplois</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Ajout de la classe notifications-layout ici -->
@@ -49,7 +55,7 @@
             </div>
 
             <div class="card">
-                <p><strong>🔔 Notification 2 :</strong> Vous avez reçu une nouvelle offre d’emploi recommandée.</p>
+                <p><strong>🔔 Notification 2 :</strong> Vous avez reçu une nouvelle offre d'emploi recommandée.</p>
             </div>
 
             <div class="card">

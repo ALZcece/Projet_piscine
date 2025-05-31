@@ -9,23 +9,29 @@
 <body>
     <header>
         <h1>HireSphere</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="reseau.html">Réseau</a></li>
+                <li><a href="emplois.html">Emplois</a></li>
+                <li><a href="messagerie.html">Messagerie</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="profil.html">Vous</a></li>
+                <li>
+                    <form action="../backend/index.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="logout">
+                        <button type="submit" class="logout-link">Se déconnecter</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
         <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
             <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
             <button type="submit">Rechercher</button>
         </form>
-        <nav>
-            <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="reseau.html">Mon Réseau</a></li>
-                <li><a href="profil.html">Vous</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="messagerie.html">Messagerie</a></li>
-                <li><a href="emplois.html">Emplois</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <div class="content">
+    <div class="content" style="margin: 0 auto; max-width: 900px;">
         <h2>Mon réseau</h2>
         <div class="network-container">
             <!-- Invitations -->

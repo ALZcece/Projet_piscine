@@ -6,23 +6,29 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/global.js" defer></script>
 </head>
-<body>
+<body style="padding-top: 80px;">
     <header>
         <h1>HireSphere</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="reseau.html">Réseau</a></li>
+                <li><a href="emplois.html">Emplois</a></li>
+                <li><a href="messagerie.html">Messagerie</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="profil.html">Vous</a></li>
+                <li>
+                    <form action="../backend/index.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="logout">
+                        <button type="submit" class="logout-link">Se déconnecter</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
         <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
             <input type="text" id="search-input" name="query" placeholder="Rechercher..." />
             <button type="submit">Rechercher</button>
         </form>
-        <nav>
-            <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="reseau.html">Mon Réseau</a></li>
-                <li><a href="profil.html">Vous</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="messagerie.html">Messagerie</a></li>
-                <li><a href="emplois.html">Emplois</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- STRUCTURE PAGE -->
@@ -35,7 +41,7 @@
                     <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
                 </div>
                 <h3>Célian Hervouet</h3>
-                <p>Étudiant Ingénierie à l’ECE Paris<br><strong>ECE. École d’ingénieurs.</strong></p>
+                <p>Étudiant Ingénierie à l'ECE Paris<br><strong>ECE. École d'ingénieurs.</strong></p>
             </div>
             <ul>
                 <li><a href="#">Preferences</a></li>
@@ -51,7 +57,7 @@
 
             <div class="card">
                 <h2>Chargé de mobilisation - Tous Bénévoles</h2>
-                <p>Localisation : Nanterre (Île-de-France)<br>Type : Bénévolat<br><strong>Chaîne de l’Espoir</strong></p>
+                <p>Localisation : Nanterre (Île-de-France)<br>Type : Bénévolat<br><strong>Chaîne de l'Espoir</strong></p>
                 <div class="actions">
                     <button class="btnblue">Voir l'offre</button>
                     <button class="btngray">Enregistrer</button>
@@ -59,7 +65,7 @@
             </div>
 
             <div class="card">
-                <h2>Stage Ingénieur d’Affaires - HEDON</h2>
+                <h2>Stage Ingénieur d'Affaires - HEDON</h2>
                 <p>Localisation : Région Île-de-France<br>Durée : 6 mois<br><strong>HEDON Technologies</strong></p>
                 <div class="actions">
                     <button class="btnblue">Voir l'offre</button>
@@ -82,7 +88,7 @@
             <h3>Top job picks for you</h3>
             <ul>
                 <li><a href="#">Chargé de mobilisation - Tous Bénévoles</a><br><small>Nanterre, Île-de-France</small></li>
-                <li><a href="#">Stage Ingénieur d’Affaires - HEDON Technologies</a><br><small>Greater Paris Region</small></li>
+                <li><a href="#">Stage Ingénieur d'Affaires - HEDON Technologies</a><br><small>Greater Paris Region</small></li>
                 <li><a href="#">Stage Système Thermique - Stellantis</a><br><small>Poissy, Île-de-France</small></li>
             </ul>
         </div>
@@ -94,4 +100,3 @@
     </footer>
 </body>
 </html>
-<!DOCTYPE html>
