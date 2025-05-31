@@ -105,12 +105,6 @@
         </div>
     </div>
 
-    <div id="user-info">
-        <img class="user-photo-profil" src="" alt="Photo de profil" style="width:100px;height:100px;border-radius:50%;">
-        <h2 id="nom-prenom"></h2>
-        <p id="emploi"></p>
-    </div>
-
     <footer>
         <div class="card" style="max-width:600px;margin:20px auto 0 auto;">
             <h3>Contact administrateur</h3>
@@ -125,5 +119,33 @@
     </footer>
 
     <script src="../assets/js/userdata.js"></script>
+    <script>
+    fetch('../backend/get_user_info.php')
+      .then(response => {
+        if (!response.ok) throw new Error('Non connecté');
+        return response.json();
+      })
+      .then(user => {
+        // Pour toutes les images de profil dynamiques
+        document.querySelectorAll('.user-photo-profil').forEach(img => {
+          img.src = '../backend/uploads/' + user.photo_profil;
+        });
+        // Sidebar (déjà géré)
+        if(document.getElementById('sidebar-nom-prenom')) {
+          document.getElementById('sidebar-nom-prenom').textContent = user.prenom + ' ' + user.nom;
+        }
+        if(document.getElementById('sidebar-emploi')) {
+          document.getElementById('sidebar-emploi').textContent = user.emploi;
+        }
+      })
+      .catch(() => {
+        document.querySelectorAll('.user-photo-profil').forEach(img => {
+          img.src = '../assets/images/default-avatar.png';
+        });
+        if(document.querySelector('.profile-summary')) {
+          document.querySelector('.profile-summary').innerHTML = '<p>Veuillez vous connecter.</p>';
+        }
+      });
+    </script>
 </body>
 </html>
