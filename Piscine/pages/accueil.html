@@ -7,6 +7,10 @@
     <script src="../assets/js/global.js" defer></script>
 </head>
 <body>
+    <form action="../backend/index.php" method="POST" style="position:absolute;top:20px;right:30px;">
+        <input type="hidden" name="action" value="logout">
+        <button type="submit" class="btnblue">Se déconnecter</button>
+    </form>
     <header>
         <h1>HireSphere</h1>
         <form action="#" method="get" class="search-bar" onsubmit="handleSearch(event)">
