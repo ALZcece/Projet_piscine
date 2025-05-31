@@ -36,30 +36,52 @@
 
         <!-- Colonne gauche : Résumé du profil -->
         <div class="sidebar">
-            <div class="profile-summary">
+            <div class="profile-summary person">
                 <div class="picture">
-                    <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
+                    <img class="user-photo-profil" id="sidebar-photo-profil" src="" alt="Photo de profil">
                 </div>
-                <h3>Jean Dupont</h3>
-                <p>Étudiant en informatique</p>
-                <p>Université de Paris</p>
+                <h3 id="sidebar-nom-prenom"></h3>
+                <p id="sidebar-emploi"></p>
             </div>
         </div>
 
         <!-- Contenu principal : Notifications -->
-        <div class="content">
+        <div class="content" style="margin: 0 auto; max-width: 900px;">
             <h2>Notifications</h2>
-
-            <div class="card">
-                <p><strong>🔔 Notification 1 :</strong> Antoine Dupont a consulté votre profil.</p>
-            </div>
-
-            <div class="card">
-                <p><strong>🔔 Notification 2 :</strong> Vous avez reçu une nouvelle offre d'emploi recommandée.</p>
-            </div>
-
-            <div class="card">
-                <p><strong>🔔 Notification 3 :</strong> Airbus Helicopters vous a envoyé une invitation à se connecter.</p>
+            <div class="network-container">
+                <!-- Notification : Conférence -->
+                <section class="card">
+                    <h3>Conférence à venir : IA & Entreprise</h3>
+                    <p>
+                        <strong>Date :</strong> 10 juin 2025<br>
+                        <strong>Lieu :</strong> ECE Paris<br>
+                        <strong>Détail :</strong> Participez à la conférence sur l'intelligence artificielle et son impact dans le monde professionnel, organisée par l'Ecole et Omnes Education.
+                    </p>
+                </section>
+                <!-- Notification : Succès d'un ami -->
+                <section class="card">
+                    <h3>Votre ami Claire Martin a décroché un job !</h3>
+                    <p>
+                        <strong>Date :</strong> 2 juin 2025<br>
+                        Claire Martin vient d'être recrutée comme Développeuse Front-End chez Capgemini. Félicitations à elle !
+                    </p>
+                </section>
+                <!-- Notification : Bourse -->
+                <section class="card">
+                    <h3>Lucas Bernard a obtenu une bourse Erasmus</h3>
+                    <p>
+                        <strong>Date :</strong> 28 mai 2025<br>
+                        Lucas partira à Berlin pour un projet de recherche en cybersécurité grâce à la bourse Erasmus+.
+                    </p>
+                </section>
+                <!-- Notification : Autre événement -->
+                <section class="card">
+                    <h3>Atelier CV & LinkedIn</h3>
+                    <p>
+                        <strong>Date :</strong> 5 juin 2025<br>
+                        Un atelier pour améliorer votre CV et votre profil LinkedIn aura lieu à l'ECE. Inscrivez-vous vite !
+                    </p>
+                </section>
             </div>
         </div>     
     </div>
@@ -67,5 +89,20 @@
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
     </footer>
+    <script>
+    fetch('../backend/get_user_info.php')
+      .then(response => {
+        if (!response.ok) throw new Error('Non connecté');
+        return response.json();
+      })
+      .then(user => {
+        document.getElementById('sidebar-photo-profil').src = '../backend/uploads/' + user.photo_profil;
+        document.getElementById('sidebar-nom-prenom').textContent = user.prenom + ' ' + user.nom;
+        document.getElementById('sidebar-emploi').textContent = user.emploi;
+      })
+      .catch(() => {
+        document.querySelector('.profile-summary').innerHTML = '<p>Veuillez vous connecter.</p>';
+      });
+    </script>
 </body>
 </html>
