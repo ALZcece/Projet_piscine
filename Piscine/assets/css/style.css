@@ -207,28 +207,20 @@ footer {
     color: #555;
 }
 
-.btnblue {
-    background-color: #004080 !important;
-    color: white !important;
-    border: none;
-    padding: 8px 16px;
+.btn, .btnblue, .btngray {
+    padding: 8px 20px;
     border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    min-width: 120px;
-    font-size: 1.1em;
     font-weight: 500;
-    margin-top: 0;
-    margin-left: 10px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
 }
-
-.btnblue:hover {
-    background-color: #003366 !important;
-}
-
-.btngray {
-    background-color: #ccc !important;
-    color: black !important;
+.btnblue { background: #004080; color: #fff !important; }
+.btnblue:hover { background: #003366 !important; }
+.btngray { background: #ccc; color: #222 !important; }
+.btngray:hover {
+    background-color: #bbb !important;
 }
 
 /* ====== CONTENU CENTRAL ====== */
@@ -239,6 +231,7 @@ footer {
     min-width: 0;
     margin: 0 auto;
     width: 100%;
+    align-items: center;
 }
 
 .content > h2 {
@@ -435,31 +428,6 @@ footer {
 
 .fake-input-button:hover {
     background-color: #e0e0e0;
-}
-
-/* ====== NOTIFICATIONS - Agrandir zone centrale ====== */
-.page-layout.notifications-layout .content {
-    max-width: 900px;
-    width: 100%;
-}
-
-.page-layout.notifications-layout {
-    justify-content: space-between;
-    margin : 80px auto;
-}
-
-.page-layout.notifications-layout .sidebar {
-    flex-shrink: 0;
-}
-
-/* Centrer les cartes réseau sur la page */
-.network-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
 /* Réduire la taille des photos de profil */
