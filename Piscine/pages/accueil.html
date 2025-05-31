@@ -33,24 +33,50 @@
 
     <div class="page-layout">
         <div class="sidebar">
-            <div class="profile-summary">
+            <div class="profile-summary person">
                 <div class="picture">
-                    <img src="../assets/images/employes/macron.jpg" alt="Photo de profil">
+                    <img class="user-photo-profil" src="" alt="Photo de profil">
                 </div>
-                <h3>Jean Dupont</h3>
-                <p>Étudiant en informatique</p>
-                <p>Université de Paris</p>
+                <h3 id="sidebar-nom-prenom"></h3>
+                <p id="sidebar-emploi"></p>
             </div>
         </div>
 
         <div class="content">
-            <!-- Faux champ de post : seul le champ est cliquable -->
-            <div class="post">
-                <img src="../assets/images/employes/macron.jpg" alt="Photo de profil" class="post-avatar">
-                <button class="fake-input-button" onclick="openModal()">Commencez une publication...</button>
+            <!-- Introduction HireSphere -->
+            <div class="card">
+                <h2>Bienvenue sur HireSphere</h2>
+                <p>HireSphere est votre réseau professionnel dédié à l'ECE et à ses étudiants. Retrouvez ici les actualités, événements, et partagez vos expériences avec la communauté !</p>
             </div>
 
- 
+            <!-- Évènement de la semaine -->
+            <div class="card">
+                <h3>Évènement de la semaine</h3>
+                <p><strong>Porte ouverte de l'ECE</strong> : Venez découvrir l'école, rencontrer les professeurs et les étudiants, et participer à des ateliers !</p>
+                <!-- Carrousel d'images (simple version) -->
+                <div style="display:flex;gap:10px;justify-content:center;">
+                    <img src="../assets/images/event1.jpg" alt="Évènement 1" style="width:120px;height:80px;object-fit:cover;border-radius:8px;">
+                    <img src="../assets/images/event2.jpg" alt="Évènement 2" style="width:120px;height:80px;object-fit:cover;border-radius:8px;">
+                    <img src="../assets/images/event3.jpg" alt="Évènement 3" style="width:120px;height:80px;object-fit:cover;border-radius:8px;">
+                </div>
+            </div>
+
+            <!-- Chronologie des événements (remplace Publication 1 et 2) -->
+            <div class="card">
+                <h3>Conférence IA &amp; Entreprise</h3>
+                <p>Participez à la conférence sur l'intelligence artificielle et son impact dans le monde professionnel. <br><em>Le 10 juin 2025</em></p>
+            </div>
+            <div class="card">
+                <h3>Atelier CV &amp; LinkedIn</h3>
+                <p>Améliorez votre CV et votre profil LinkedIn avec l'aide de professionnels du recrutement. <br><em>Le 5 juin 2025</em></p>
+            </div>
+
+            <!-- Publication de photos/vidéos/CV (champ de post déjà présent) -->
+            <div class="post">
+                <img class="user-photo-profil post-avatar" src="" alt="Photo de profil">
+                <button class="fake-input-button" onclick="openModal()">Publiez une photo, vidéo ou votre CV...</button>
+            </div>
+
             <!-- Modale -->
             <div id="post-modal" class="modal">
                 <div class="modal-content">
@@ -67,18 +93,6 @@
                     </div>
                 </div>
             </div>
-
-            <h2>Bienvenue sur HireSphere</h2>
-            <div id="posts-container">
-                <div class="card">
-                    <h3>Publication 1</h3>
-                    <p>Ceci est le contenu de la première publication.</p>
-                </div>
-                <div class="card">
-                    <h3>Publication 2</h3>
-                    <p>Ceci est le contenu de la deuxième publication.</p>
-                </div>
-            </div>
         </div>
 
         <div class="right-sidebar">
@@ -91,8 +105,25 @@
         </div>
     </div>
 
+    <div id="user-info">
+        <img class="user-photo-profil" src="" alt="Photo de profil" style="width:100px;height:100px;border-radius:50%;">
+        <h2 id="nom-prenom"></h2>
+        <p id="emploi"></p>
+    </div>
+
     <footer>
+        <div class="card" style="max-width:600px;margin:20px auto 0 auto;">
+            <h3>Contact administrateur</h3>
+            <p>Email : admin@hiresphere.com<br>
+            Téléphone : 01 23 45 67 89<br>
+            Adresse : 10 rue de Sextius Michel, 75015 Paris</p>
+            <div style="width:100%;height:200px;margin-top:10px;">
+                <iframe src="https://www.google.com/maps?q=10+rue+Sextius+Michel,+Paris&output=embed" width="100%" height="200" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
     </footer>
+
+    <script src="js/userdata.js"></script>
 </body>
 </html>
