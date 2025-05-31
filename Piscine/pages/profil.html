@@ -5,6 +5,7 @@
     <title>HireSphere - Profil</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/global.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -31,24 +32,112 @@
         </form>
     </header>
     
-    <div class="content" style="margin: 0 auto; max-width: 900px;">
-        <div class="network-container">
+    <div class="page-layout">
+        <div class="sidebar">
             <section class="card">
-                <h2>Vous</h2>
-                <div class="person">
-                    <div class="picture">
-                    <img src="../assets/images/employes/soukane.jpg" alt="Profil 2" />
-                    </div>
-                    <div class="person-info">
-                        <h4>Lucas Bernard</h4>
-                        <p>Étudiant en cybersécurité</p>
-                    </div>
-                </div>
+                <h3>Ajouter une expérience</h3>
+                <form id="add-formation-form">
+                    <input type="text" id="formation-annee" placeholder="Année" required>
+                    <input type="text" id="formation-titre" placeholder="Titre" required>
+                    <input type="text" id="formation-lieu" placeholder="Lieu" required>
+                    <button type="submit" class="btnblue" style="width:100%;margin-top:10px;">Ajouter</button>
+                </form>
             </section>
+        </div>
+        <div class="content">
+            <div class="network-container" id="formations-cards">
+                <!-- Les formations seront affichées ici sous forme de cartes -->
+            </div>
+            <div style="text-align:center;margin-top:30px;">
+                <button class="btnblue" id="download-cv-btn">Télécharger mon CV (PDF)</button>
+            </div>
         </div>
     </div>
     <footer>
         <p>&copy; 2025 HireSphere. Tous droits réservés.</p>
     </footer>
+    <script src="../assets/js/usercv.js"></script>
+    <script>
+    // Fonction pour afficher les formations sous forme de cartes
+    function renderFormations(formations) {
+        const container = document.getElementById('formations-cards');
+        container.innerHTML = '';
+        formations.sort((a, b) => b.annee.localeCompare(a.annee));
+        formations.forEach(f => {
+            const card = document.createElement('section');
+            card.className = 'card';
+            card.innerHTML = `
+                <h4>${f.titre}</h4>
+                <p><strong>Année :</strong> ${f.annee}<br><strong>Lieu :</strong> ${f.lieu}</p>
+                <button class="btngray delete-formation-btn" style="margin-top:10px;">Supprimer</button>
+            `;
+            // Ajout du listener pour supprimer
+            card.querySelector('.delete-formation-btn').addEventListener('click', function() {
+                if(confirm('Supprimer cette formation ?')) {
+                    fetch('../backend/delete_formation.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: `annee=${encodeURIComponent(f.annee)}&titre=${encodeURIComponent(f.titre)}&lieu=${encodeURIComponent(f.lieu)}`
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if(data.success) {
+                            loadFormations();
+                        } else {
+                            alert('Erreur lors de la suppression.');
+                        }
+                    });
+                }
+            });
+            container.appendChild(card);
+        });
+    }
+
+    // Charger les formations depuis le XML
+    function loadFormations() {
+        fetch('../backend/get_formation.php')
+          .then(response => response.json())
+          .then(data => {
+              renderFormations(data.formations);
+          });
+    }
+
+    // Ajout d'une formation via le formulaire
+    document.getElementById('add-formation-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const annee = document.getElementById('formation-annee').value;
+        const titre = document.getElementById('formation-titre').value;
+        const lieu = document.getElementById('formation-lieu').value;
+        fetch('../backend/add_formation.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `annee=${encodeURIComponent(annee)}&titre=${encodeURIComponent(titre)}&lieu=${encodeURIComponent(lieu)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                loadFormations();
+                document.getElementById('add-formation-form').reset();
+            } else {
+                alert('Erreur lors de l\'ajout de la formation.');
+            }
+        });
+    });
+
+    // Télécharger le CV (PDF)
+    document.getElementById('download-cv-btn').addEventListener('click', function() {
+        // On va générer le PDF à partir du contenu affiché au centre
+        const element = document.getElementById('formations-cards');
+        html2pdf().from(element).set({
+            margin: 0.5,
+            filename: 'cv.pdf',
+            html2canvas: { scale: 2 },
+            jsPDF: { orientation: 'portrait', unit: 'in', format: 'a4', compressPDF: true }
+        }).save();
+    });
+
+    // Chargement initial
+    loadFormations();
+    </script>
 </body>
 </html>
