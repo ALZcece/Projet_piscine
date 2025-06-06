@@ -49,14 +49,6 @@ piscine/
 │   ├── schema.sql
 │   └── seed.sql
 │
-├── docs/
-│   ├── wireframes/
-│   ├── storyboard.pdf
-│   ├── specifications.pdf
-│   ├── architecture.pdf
-│   ├── modele-EA.pdf
-│   └── IA-journal.pdf
-│
 ├── .gitignore
 ├── README.md
 └── PJ_WEB_2025_<noms>.zip
@@ -96,25 +88,6 @@ piscine/
 - **Backend** : PHP
 - **Base de données** : MySQL
 - **Outils** : GitHub, Wamp
-
----
-
-## 🧠 Journal d’Assistance IA
-
-Un fichier `IA-journal.pdf` présent dans `/docs/` détaille :
-- Les requêtes faites à ChatGPT
-- Les idées ou fragments de code influencés
-- Le pourcentage d’utilisation de l’IA (≤ 40 %)
-- Exemple : génération de wireframes ou scripts AJAX
-
----
-
-
-## 📅 Dates
-
-- **Jeudi 29 mai 2025** à 23h55 : Livrable de conception
-- **Dimanche 1er juin 2025** à 23h55 : Projet final
-- **Soutenance** : Semaine du 2 juin 2025
 
 ---
 

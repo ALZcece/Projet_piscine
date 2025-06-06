@@ -50,37 +50,41 @@
             <h2>Notifications</h2>
             <div class="network-container">
                 <!-- Notification : Conférence -->
-                <section class="card">
+                <section class="card notification-card">
                     <h3>Conférence à venir : IA & Entreprise</h3>
                     <p>
                         <strong>Date :</strong> 10 juin 2025<br>
                         <strong>Lieu :</strong> ECE Paris<br>
                         <strong>Détail :</strong> Participez à la conférence sur l'intelligence artificielle et son impact dans le monde professionnel, organisée par l'Ecole et Omnes Education.
                     </p>
+                    <button class="btnblue" onclick="markNotificationRead(this)">Lu</button>
                 </section>
                 <!-- Notification : Succès d'un ami -->
-                <section class="card">
+                <section class="card notification-card">
                     <h3>Votre ami Claire Martin a décroché un job !</h3>
                     <p>
                         <strong>Date :</strong> 2 juin 2025<br>
                         Claire Martin vient d'être recrutée comme Développeuse Front-End chez Capgemini. Félicitations à elle !
                     </p>
+                    <button class="btnblue" onclick="markNotificationRead(this)">Lu</button>
                 </section>
                 <!-- Notification : Bourse -->
-                <section class="card">
+                <section class="card notification-card">
                     <h3>Lucas Bernard a obtenu une bourse Erasmus</h3>
                     <p>
                         <strong>Date :</strong> 28 mai 2025<br>
                         Lucas partira à Berlin pour un projet de recherche en cybersécurité grâce à la bourse Erasmus+.
                     </p>
+                    <button class="btnblue" onclick="markNotificationRead(this)">Lu</button>
                 </section>
                 <!-- Notification : Autre événement -->
-                <section class="card">
+                <section class="card notification-card">
                     <h3>Atelier CV & LinkedIn</h3>
                     <p>
                         <strong>Date :</strong> 5 juin 2025<br>
                         Un atelier pour améliorer votre CV et votre profil LinkedIn aura lieu à l'ECE. Inscrivez-vous vite !
                     </p>
+                    <button class="btnblue" onclick="markNotificationRead(this)">Lu</button>
                 </section>
             </div>
         </div>     
@@ -103,6 +107,10 @@
       .catch(() => {
         document.querySelector('.profile-summary').innerHTML = '<p>Veuillez vous connecter.</p>';
       });
+
+    function markNotificationRead(btn) {
+        btn.closest('.notification-card').remove();
+    }
     </script>
 </body>
 </html>

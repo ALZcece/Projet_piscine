@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/global.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+    @media print {
+        .no-print { display: none !important; }
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -40,6 +45,7 @@
                     <input type="text" id="formation-annee" placeholder="Année" required>
                     <input type="text" id="formation-titre" placeholder="Titre" required>
                     <input type="text" id="formation-lieu" placeholder="Lieu" required>
+                    <textarea id="formation-description" placeholder="Description (optionnelle)" rows="4" style="resize:vertical;width:100%;margin-top:8px;"></textarea>
                     <button type="submit" class="btnblue" style="width:100%;margin-top:10px;">Ajouter</button>
                 </form>
             </section>
@@ -58,70 +64,29 @@
     </footer>
     <script src="../assets/js/usercv.js"></script>
     <script>
-    // Fonction pour afficher les formations sous forme de cartes
-    function renderFormations(formations) {
-        const container = document.getElementById('formations-cards');
-        container.innerHTML = '';
-        formations.sort((a, b) => b.annee.localeCompare(a.annee));
-        formations.forEach(f => {
-            const card = document.createElement('section');
-            card.className = 'card';
-            card.innerHTML = `
-                <h4>${f.titre}</h4>
-                <p><strong>Année :</strong> ${f.annee}<br><strong>Lieu :</strong> ${f.lieu}</p>
-                <button class="btngray delete-formation-btn" style="margin-top:10px;">Supprimer</button>
-            `;
-            // Ajout du listener pour supprimer
-            card.querySelector('.delete-formation-btn').addEventListener('click', function() {
-                if(confirm('Supprimer cette formation ?')) {
-                    fetch('../backend/delete_formation.php', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: `annee=${encodeURIComponent(f.annee)}&titre=${encodeURIComponent(f.titre)}&lieu=${encodeURIComponent(f.lieu)}`
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if(data.success) {
-                            loadFormations();
-                        } else {
-                            alert('Erreur lors de la suppression.');
-                        }
-                    });
-                }
-            });
-            container.appendChild(card);
-        });
-    }
-
-    // Charger les formations depuis le XML
-    function loadFormations() {
-        fetch('../backend/get_formation.php')
-          .then(response => response.json())
-          .then(data => {
-              renderFormations(data.formations);
-          });
-    }
-
-    // Ajout d'une formation via le formulaire
+    // Ajout d'une formation côté client uniquement
     document.getElementById('add-formation-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const annee = document.getElementById('formation-annee').value;
         const titre = document.getElementById('formation-titre').value;
         const lieu = document.getElementById('formation-lieu').value;
-        fetch('../backend/add_formation.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `annee=${encodeURIComponent(annee)}&titre=${encodeURIComponent(titre)}&lieu=${encodeURIComponent(lieu)}`
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.success) {
-                loadFormations();
-                document.getElementById('add-formation-form').reset();
-            } else {
-                alert('Erreur lors de l\'ajout de la formation.');
+        const description = document.getElementById('formation-description').value;
+        const container = document.getElementById('formations-cards');
+        const card = document.createElement('section');
+        card.className = 'card';
+        card.innerHTML = `
+            <h4>${titre}</h4>
+            <p><strong>Année :</strong> ${annee}<br><strong>Lieu :</strong> ${lieu}</p>
+            ${description ? `<div style='white-space:pre-line;margin:8px 0 0 0;'>${description.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>` : ''}
+            <button class="btngray delete-formation-btn no-print" style="margin-top:10px;">Supprimer</button>
+        `;
+        card.querySelector('.delete-formation-btn').addEventListener('click', function() {
+            if(confirm('Supprimer cette formation ?')) {
+                card.remove();
             }
         });
+        container.prepend(card);
+        document.getElementById('add-formation-form').reset();
     });
 
     // Télécharger le CV (PDF)
@@ -135,9 +100,6 @@
             jsPDF: { orientation: 'portrait', unit: 'in', format: 'a4', compressPDF: true }
         }).save();
     });
-
-    // Chargement initial
-    loadFormations();
     </script>
 </body>
 </html>

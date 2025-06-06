@@ -88,3 +88,27 @@ function submitModalPost() {
     document.getElementById('modal-image').value = '';
     closeModal();
 }
+
+// ----- MODALE DÉTAIL OFFRE EMPLOI -----
+function showOfferDetail(event) {
+    const offreId = event.target.getAttribute('data-offre');
+    let titre = '';
+    let description = '';
+    if (offreId === '1') {
+        titre = "Chargé de mobilisation - Tous Bénévoles";
+        description = "Localisation : Nanterre (Île-de-France)<br>Type : Bénévolat<br><strong>Chaîne de l'Espoir</strong><br><br>Mission : Mobiliser des bénévoles pour des actions solidaires, organiser des événements, sensibiliser le public.";
+    } else if (offreId === '2') {
+        titre = "Stage Ingénieur d'Affaires - HEDON";
+        description = "Localisation : Région Île-de-France<br>Durée : 6 mois<br><strong>HEDON Technologies</strong><br><br>Mission : Prospection commerciale, gestion de portefeuille clients, accompagnement des projets d'ingénierie.";
+    } else if (offreId === '3') {
+        titre = "Stage Thermique - Stellantis";
+        description = "Localisation : Poissy (On-site)<br>Durée : 6 mois<br><strong>Stellantis</strong><br><br>Mission : Études thermiques sur véhicules, analyse de performance, participation à l'innovation technique.";
+    }
+    document.getElementById('modal-offre-titre').textContent = titre;
+    document.getElementById('modal-offre-description').innerHTML = description;
+    document.getElementById('offer-modal').style.display = 'block';
+}
+
+function closeOfferModal() {
+    document.getElementById('offer-modal').style.display = 'none';
+}
